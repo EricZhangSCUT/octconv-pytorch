@@ -8,7 +8,7 @@ class OctConv(nn.Module):
     def __init__(self, ch_in, ch_out, kernel_size, stride=1, alphas=(0.5, 0.5)):
         super(OctConv, self).__init__()
         self.alpha_in, self.alpha_out = alphas
-        assert 0 <= self.alpha_in <= 1 and 0 <= self.alpha_in <= 1, "Alphas must be in interval [0, 1]"
+        assert 0 <= self.alpha_in <= 1 and 0 <= self.alpha_out <= 1, "Alphas must be in interval [0, 1]"
 
         # CH IN
         self.ch_in_hf = int((1 - self.alpha_in) * ch_in)
